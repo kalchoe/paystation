@@ -34,7 +34,15 @@ public class PayStationImplTest {
         assertEquals("Should display 2 min for 5 cents",
                 2, ps.readDisplay());
     }
-
+    
+    @Test
+    public void emptyReturnsTotalAmount()throws IllegalCoinException{
+        ps.addPayment(10);
+        ps.cancel();
+        assertEquals("Cancel should clear display",
+                0, ps.readDisplay());
+    }
+    
     /**
      * Entering 25 cents should make the display report 10 minutes parking time.
      */

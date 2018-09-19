@@ -18,6 +18,7 @@
  * purposes. For any commercial use, see http://www.baerbak.com/
  */
 package paystation.domain;
+import java.util.Map;
 
 public interface PayStation {
 
@@ -49,5 +50,14 @@ public interface PayStation {
     /**
      * Cancel the present transaction. Resets the machine for a new transaction.
      */
-    public void cancel();
+    
+    public int empty();
+    
+    
+   // public void cancel();
+    
+    public Map<String, Integer> cancel();
+    
+  
+    
 }
